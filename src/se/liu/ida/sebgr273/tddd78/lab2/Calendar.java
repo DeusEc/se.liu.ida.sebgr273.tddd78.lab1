@@ -2,9 +2,10 @@ package se.liu.ida.sebgr273.tddd78.lab2;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Calendar {
-    private ArrayList<Appointment> appointments;
+    private List<Appointment> appointments;
 
     public Calendar() {
         appointments = new ArrayList<>();
