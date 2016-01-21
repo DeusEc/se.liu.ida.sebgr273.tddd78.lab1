@@ -38,19 +38,19 @@ public class Calendar {
         } else if(ndHr > 23 || ndHr < 0  || ndMn > 59 || ndMn < 0){
             throw new IllegalArgumentException("Invalid end time");
         } else {
+            Month month1 = new Month(month,
+                    Month.getMonthNumber(month),
+                    Month.getMonthDays(month));
+            Date date = new Date(year, month1, day);
+            TimePoint srt = new TimePoint(start);
+            TimePoint ind = new TimePoint(end);
+            TimeSpan timeSpan = new TimeSpan(srt, ind);
 
+            Appointment appointment = new Appointment(subject,
+                    date, timeSpan);
+
+            Calendar.this.appointments.add(appointment);
         }
-        Month month1 = new Month(month,
-                            Month.getMonthNumber(month),
-                            Month.getMonthDays(month));
-        Date date = new Date(year, month1, day);
-        TimePoint srt = new TimePoint(start);
-        TimePoint ind = new TimePoint(end);
-        TimeSpan timeSpan = new TimeSpan(srt, ind);
 
-        Appointment appointment = new Appointment(subject,
-                date, timeSpan);
-
-        Calendar.this.appointments.add(appointment);
     }
 }
