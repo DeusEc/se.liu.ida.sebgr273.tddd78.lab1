@@ -12,6 +12,6 @@ public interface Shape {
 
     Color getColor();
 
-    void draw();
+    void draw(Graphics g);
 
 }

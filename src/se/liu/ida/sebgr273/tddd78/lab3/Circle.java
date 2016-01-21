@@ -5,30 +5,15 @@ import java.awt.*;
 /**
  * Created by Sebastian on 2016-01-21.
  */
-public class Circle implements Shape{
-    private int x;
-    private int y;
+public class Circle extends AbstractShape{
     private int radius;
-    private java.awt.Color color;
 
     public Circle(int x, int y, int radius, Color color) {
+        super(y, x, color);
         if (radius < 0){
             throw new IllegalArgumentException("Negativ radie!");
         }
-        this.x = x;
-        this.y = y;
         this.radius = radius;
-        this.color = color;
-    }
-
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    @Override
-    public int getY() {
-        return y;
     }
 
     public int getRadius() {
@@ -36,12 +21,7 @@ public class Circle implements Shape{
     }
 
     @Override
-    public Color getColor() {
-        return color;
-    }
-
-    @Override
-    public void draw() {
+    public void draw(Graphics g) {
         System.out.printf("Ritar: " + this);
     }
 
