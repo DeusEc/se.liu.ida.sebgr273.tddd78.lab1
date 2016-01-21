@@ -21,10 +21,12 @@ public class Circle implements Shape{
         this.color = color;
     }
 
+    @Override
     public int getX() {
         return x;
     }
 
+    @Override
     public int getY() {
         return y;
     }
@@ -33,7 +35,23 @@ public class Circle implements Shape{
         return radius;
     }
 
+    @Override
     public Color getColor() {
         return color;
+    }
+
+    @Override
+    public void draw() {
+        System.out.printf("Ritar: " + this);
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "x=" + x +
+                ", y=" + y +
+                ", radius=" + radius +
+                ", color=" + color +
+                '}';
     }
 }
