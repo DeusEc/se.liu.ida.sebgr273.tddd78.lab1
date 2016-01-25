@@ -1,7 +1,5 @@
 package se.liu.ida.sebgr273.tddd78.lab2;
 
-import java.util.Random;
-
 public class Booker {
     public static void main(String[] args) {
         Calendar test = new Calendar();
