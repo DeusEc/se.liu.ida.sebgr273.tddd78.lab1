@@ -18,10 +18,18 @@ public class TimePoint {
         String[] parts = time.split(":");
         this.hour = Integer.parseInt(parts[0]);
         this.minute = Integer.parseInt(parts[1]);
+        if(!this.timeChecker()){
+            throw new IllegalArgumentException("Time not in range");
+        }
     }
 
     @Override
     public String toString() {
         return time;
+    }
+
+    private boolean timeChecker(){
+        return hour >= 0 && hour <= 23 &&
+                minute >= 0 && minute <= 59;
     }
 }

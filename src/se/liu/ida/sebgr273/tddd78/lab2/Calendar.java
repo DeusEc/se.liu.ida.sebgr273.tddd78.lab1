@@ -18,25 +18,24 @@ public class Calendar {
 
     public void book(int year, String month, int day,
                      String start, String end, String subject) {
-        String[] strt = start.split(":");
-        String[] nd = end.split(":");
-        int strtHr = Integer.parseInt(strt[0]);
-        int strtMn = Integer.parseInt(strt[1]);
-        int ndHr = Integer.parseInt(nd[0]);
-        int ndMn = Integer.parseInt(nd[1]);
+        String[] startList = start.split(":");
+        String[] endList = end.split(":");
+        int startHr = Integer.parseInt(startList[0]);
+        int startMn = Integer.parseInt(startList[1]);
+        int endHr = Integer.parseInt(endList[0]);
+        int endMn = Integer.parseInt(endList[1]);
 
-        if(year < 2013) {
+        /*if(year < 2013) {
             throw new IllegalArgumentException("Invalid year!");
-        } else if(Month.getMonthDays(month) < day
-                || Month.getMonthNumber(month) == -1){
+        } else*/ if(Month.getMonthDays(month) >= day || day < 0){
             throw new IllegalArgumentException("Invalid day");
         } else if(Month.getMonthNumber(month) == -1){
             throw new IllegalArgumentException("Invalid month");
-        } else if(strtHr > 23 || strtHr < 0  || strtMn > 59 || strtMn < 0){
+        } /*else if(startHr > 23 || startHr < 0  || startMn > 59 || startMn < 0){
             throw new IllegalArgumentException("Invalid start time");
-        } else if(ndHr > 23 || ndHr < 0  || ndMn > 59 || ndMn < 0){
+        } else if(endHr > 23 || endHr < 0  || endMn > 59 || endMn < 0){
             throw new IllegalArgumentException("Invalid end time");
-        } else {
+        }*/ else {
             Month month1 = new Month(month,
                     Month.getMonthNumber(month),
                     Month.getMonthDays(month));
