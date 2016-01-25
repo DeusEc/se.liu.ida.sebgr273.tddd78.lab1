@@ -7,7 +7,11 @@ import java.util.List;
  * Created by Sebastian on 2016-01-21.
  */
 public class Queue {
-    private List<Person> elements = new ArrayList<Person>();
+    private List<Person> elements;
+
+    public Queue(){
+        elements = new ArrayList<>();
+    }
 
     public int size() {
         return elements.size();
@@ -30,8 +34,6 @@ public class Queue {
     }
 
     public Person dequeue(){
-        Person person = elements.get(0);
-        elements.remove(0);
-        return person;
+        return elements.remove(0);
     }
 }

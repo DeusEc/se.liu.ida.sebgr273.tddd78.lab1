@@ -48,7 +48,7 @@ public class Calendar {
             Appointment appointment = new Appointment(subject,
                     date, timeSpan);
 
-            Calendar.this.appointments.add(appointment);
+            this.appointments.add(appointment);
         }
 
     }
