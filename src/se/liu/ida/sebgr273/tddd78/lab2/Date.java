@@ -6,7 +6,7 @@ public class Date {
     private int day;
 
     public Date(int year, Month month, int day) {
-        if (year < 2013){
+        if (year <= 2013){
             throw new IllegalArgumentException(
                     "You need to enter a year after 2012");
         }
