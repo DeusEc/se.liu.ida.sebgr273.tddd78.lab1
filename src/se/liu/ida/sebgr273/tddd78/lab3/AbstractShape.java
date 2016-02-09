@@ -2,18 +2,15 @@ package se.liu.ida.sebgr273.tddd78.lab3;
 
 import java.awt.*;
 
-/**
- * Created by Sebastian on 2016-01-21.
- */
-public abstract class AbstractShape implements Shape {
+public abstract class AbstractShape implements Shape{
 
     protected int x;
     protected int y;
     protected Color color;
 
-    public AbstractShape(int y, int x, Color color) {
-        this.y = y;
+    public AbstractShape(int x, int y, Color color) {
         this.x = x;
+        this.y = y;
         this.color = color;
     }
 
@@ -39,17 +36,17 @@ public abstract class AbstractShape implements Shape {
     }
 
     @Override
-    public int getX(){
+    public int getX() {
         return x;
     }
 
     @Override
-    public int getY(){
+    public int getY() {
         return y;
     }
 
     @Override
-    public Color getColor(){
+    public Color getColor() {
         return color;
     }
 }

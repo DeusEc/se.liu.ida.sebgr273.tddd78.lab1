@@ -9,25 +9,28 @@ public class Text extends AbstractShape{
     private int size;
     private String text;
 
-    public Text(int x, int y, int size, Color color, String text) {
-        super(y, x, color);
+    public Text(int x, int y, int size, String text, Color color) {
+        super(x, y, color);
         this.size = size;
         this.text = text;
     }
 
     @Override
     public void draw(Graphics g) {
-        System.out.println("Ritar: " + this);
+        //System.out.printf("Ritar: " + this);
+        g.setColor(color);
+        g.setFont(new Font("serif", Font.PLAIN, size));
+        g.drawString(text, x, y);
     }
 
     @Override
     public String toString() {
-        return "Text{" +
-                "x=" + x +
-                ", y=" + y +
+        return "Circle{" +
+                "x=" + getX() +
+                ", y=" + getY() +
                 ", size=" + size +
-                ", color=" + color +
-                ", text='" + text + '\'' +
+                ", text=" + text +
+                ", color=" + getColor() +
                 '}';
     }
 }

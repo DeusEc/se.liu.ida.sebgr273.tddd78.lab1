@@ -14,19 +14,19 @@ public class TestShapes {
         Circle liten = new Circle(5, 5, 3, Color.blue);
         Circle mellan = new Circle(20, 25, 30, Color.green);
 
-        Rectangle lagom = new Rectangle(20, 30, 15, 10, Color.darkGray);
-        Rectangle gert = new Rectangle(1, 2, 100, 50, Color.blue);
+        Rectangle lagom = new Rectangle(150, 200, 40, 60, Color.MAGENTA);
+        Rectangle klot = new Rectangle(300, 400, 25, 10, Color.RED);
 
-        Text kort = new Text(15, 20, 12, Color.black, "En kort text");
-        Text mitten = new Text(100, 200, 18, Color.BLACK, "En lite storare text");
+        Text beskrivande = new Text(100, 50, 12, "En beskrivande text", Color.black);
+        Text ickebeskrivande = new Text(20, 20, 18, "What is love?", Color.black);
 
         shapes.add(stor);
         shapes.add(liten);
         shapes.add(mellan);
         shapes.add(lagom);
-        shapes.add(gert);
-        shapes.add(kort);
-        shapes.add(mitten);
+        shapes.add(klot);
+        shapes.add(beskrivande);
+        shapes.add(ickebeskrivande);
 
         for (Shape shape : shapes) {
             //shape.draw();

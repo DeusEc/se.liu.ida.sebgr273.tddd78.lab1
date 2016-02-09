@@ -1,23 +1,22 @@
 package se.liu.ida.sebgr273.tddd78.lab3;
 
 import javax.swing.*;
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.*;
 import java.util.List;
-import java.awt.Graphics;
 
-/**
- * Created by Sebastian on 2016-01-21.
- */
 public class DiagramComponent extends JComponent{
-    @Override
-    protected void paintComponent(final Graphics g){
+    private List<Shape> shapes;
+
+    @Override protected void paintComponent(final Graphics g){
         super.paintComponent(g);
+        for (Shape shape : shapes) {
+            shape.draw(g);
+        }
     }
 
-    private List<Shape> shapes = new ArrayList<>();
-
-    public DiagramComponent(List<Shape> shapes) {
-        this.shapes = shapes;
+    public DiagramComponent() {
+        shapes = new ArrayList<>();
     }
 
     public void addShape(Shape s){

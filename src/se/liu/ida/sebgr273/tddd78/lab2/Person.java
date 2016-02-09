@@ -12,9 +12,9 @@ public class Person {
         this.birthDay = birthDay;
     }
 
-    private Period getAge(){
+    private int getAge(){
         LocalDate now = LocalDate.now();
-        return Period.between(birthDay, now);
+        return Period.between(birthDay, now).getYears();
     }
 
     public static void main(String[] args) {

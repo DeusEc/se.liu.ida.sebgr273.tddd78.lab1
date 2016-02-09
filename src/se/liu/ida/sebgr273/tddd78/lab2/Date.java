@@ -6,6 +6,10 @@ public class Date {
     private int day;
 
     public Date(int year, Month month, int day) {
+        if (year <= 2013){
+            throw new IllegalArgumentException(
+                    "You need to enter a year after 2012");
+        }
         this.year = year;
         this.month = month;
         this.day = day;
